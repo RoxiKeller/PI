@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    
+      * {
+      box-sizing: border-box;
+    }
+
+    .header h1 {
+      font-size: 40px;
+    }
+
+   
+    /* Style the top navigation bar */
+    .navbar {
+  overflow: hidden;
+  background-color: rgb(255, 164, 66);
+}
+
+    /* Style the navigation bar links */
+    .navbar a, #title {
+      float: right;
+      display: block;
+      color: white;
+      text-align: center;
+      align-items: center;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .navbar #title{
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+
+    /* Right-aligned link */
+    .navbar a.left, #title {
+      float: left;
+      font-size: 35px;
+      margin-top: 0px;
+      cursor:default;
+    }
+
+    .navbar a.left:hover{
+      background-color: rgb(255, 164, 66);
+      color: rgb(255, 255, 255);
+    }
+
+    /* Change color on hover */
+    .navbar a:hover {
+      background-color: rgb(255, 164, 66);
+      color: rgb(255, 123, 0);
+    }
+
+    .navbar a.register-button {
+      background-color: rgb(0, 81, 255); /* Change the color here */
+      color: rgb(255, 255, 255);
+      border-radius: 12px;
+      padding: 5px 20px;
+      margin-right: 10px;
+      text-align: center;
+      margin-top: 15px; 
+    }
+
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: rgb(216, 239, 239); /* Set the main background color (purple) */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Set the container minimum height to 100% of the viewport height */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* Set the background color of the main container to transparent */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 20px; /* Keep some padding for aesthetic reasons */
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 1000px; /* Adjust the height to make the form longer */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button {
+    background-color: #ff4500;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Add margin to the bottom */
+    font-size: 18px;
+}
+
+.submit-button:hover {
+    background-color: #e23c00; /* Set the desired background color on hover */
+}
+
+/* Center the form */
+.main form {
+  width: 40%; /* Adjust the width as needed */
+}
+
+    h2 {
+      font-size: 36px;
+      color: #1c0053;
+    }
+
+   
+
+    label {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #1c0053;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="parola"],
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: rgb(17, 212, 85);
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: rgb(13, 167, 67);
+    }
+
+    #fieldDetails {
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      background: #ddd;
+      padding: 10px;
+      align-items: center;
+      padding-left: 150px;
+      margin-top: auto;
+    }
+
+    .footer-left {
+      flex: 10%;
+    }
+
+    .footer-right {
+      flex: 90%;
+      padding-left: 0px;
+    }
+
+    #formTitle {
+            font-size: 24px;
+            color: #1c0053;
+            margin-bottom: 20px;
+        }
+
+    </style>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    var email = parent.document.URL.substring(parent.document.URL.indexOf('email=') + 6, parent.document.URL.length);
+    
+    function php_req(formCode){
+      $(document).ready(function(){
+        var request;
+        event.preventDefault();
+        if (request){
+            request.abort;
+        }
+        var form = $(this);
+        
+        var inputs = form.find("input, button");
+        
+        var serializedData = `email=${email}&formCode=${formCode}`;
+
+        inputs.prop("disabled", true);
+        
+        console.log("a");
+        $.ajax({
+            url:"./creare_formular.php",
+            type: "post",
+            data: serializedData
+        }).then((resp) => {
+          console.log(resp);
+          if (resp == "Message has been sent"){
+              alert("Codul formularului a fost trimis pe mail. :D");
+          }
+        });
+      });
+    }
+</script>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="pagina_conectare.html">Deconectare</a>
+    <a onclick="location.href='recenzii.html?email='+email">Recenzii</a>
+    <a onclick="location.href='pagina_sabloane.html?email='+email">Șabloane</a>
+    <a onclick="location.href='home.html?email='+email">Home</a>
+    
+    <a class="left"><img src="dynamic_forms_generator_logo2.png" width=40></a>
+    <a id="title" class="left"><b>Formify</b></a>
+  </div>
+
+  <div class="main">
+    <form id="dynamicForm" onsubmit="generateForm()">
+        <!-- Add a div to contain the title -->
+        <div id="formTitle">Creează un formular</div>
+
+        <label for="formName">Numele formularului:</label>
+        <input type="text" id="formName" name="formName" required><br>
+
+        <label for="numFields">Număr de câmpuri:</label>
+        <input type="number" id="numFields" name="numFields" min="1" required><br>
+
+        <div id="fieldDetails"></div>
+
+        <input id="buton" type="submit" value="Generează">
+    </form>
+</div>
+
+    <script>
+        var formStyle = `<style>
+              #styledForm {
+              width: 30%;
+              background-color: #f2f2f2;
+              padding: 20px;
+              border-radius: 5px;
+            }
+
+            #styledForm input[type="text"],
+            #styledForm input[type="submit"] {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+
+            #styledForm input[type="submit"] {
+              background-color: #4CAF50;
+              color: white;
+              cursor: pointer;
+            }
+
+            #styledForm input[type="submit"]:hover {
+              background-color: #45a049;
+            }
+  </style>`
+
+      let formGenerated = false;
+      let formCode = "";
+
+      function generateForm() {
+        event.preventDefault();
+
+        if (formGenerated) {
+          php_req(formCode);
+        }else{
+
+        // Get form details
+        const formName = document.getElementById('formName').value;
+        const numFields = parseInt(document.getElementById('numFields').value);
+
+        // Disable the input field for the number of fields
+        document.getElementById('numFields').disabled = true;
+
+        // Create form HTML
+        let formHTML = `<h2>${formName}</h2><form action="#" method="post">`;
+
+  formHTML += '<div id="styledForm">'
+
+        formHTML
+        // Create fields
+        for (let i = 1; i <= numFields; i++) {
+          const fieldName = prompt(`Introduceți numele câmpului ${i}:`);
+          const fieldType = prompt(`Introduceți tipul câmpului ${i} (username, email, parola, numar de telefon, text, da/nu, numar, camp optional, nume/prenume):`);
+
+          formHTML += `<label for="${fieldName}">${fieldName}:</label>`;
+
+          if (fieldType === 'username' || fieldType === 'email' || fieldType === 'parola' || fieldType === 'numar de telefon' || fieldType === 'text' || fieldType === 'numar' || fieldType === 'camp optional' || fieldType === 'nume/prenume') {
+            formHTML += `<input type="${fieldType}" id="${fieldName}" name="${fieldName}"><br>`;
+          } else if (fieldType === 'da/nu') {
+            formHTML += `<br><br>`
+            formHTML += `<label for="${fieldName}">Da</label><input type="radio" id="${fieldName}" name="${fieldName}" value="yes">`;
+            formHTML += `<label for="${fieldName}">Nu</label><input type="radio" id="${fieldName}" name="${fieldName}" value="no"><br><br>`;
+          } else {
+            alert(`Tip de câmp invalid "${fieldType}" pentru câmpul ${i}. Vă rugăm introduceți un tip valid.`);
+            return;
+          }
+        }
+
+        
+
+        formHTML += `<input type="submit" value="Trimite" class="submit-button">`;
+        
+        formHTML += '</div>'
+
+        // Display generated form
+        document.getElementById('fieldDetails').innerHTML = formHTML;
+
+        formGenerated = true;
+
+        formCode = formStyle+formHTML;
+        }
+      }
+    </script>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <img src="dynamic_forms_generator_logo2.png" width=70>
+    </div>
+    <div class="footer-right">
+      <p style="color:rgb(65, 65, 132)"><b>📌 România, județul Timiș, municipiul Timișoara, strada Bobâlna nr. 23, 300331</b></p>
+      <p style="color:rgb(65, 65, 132)"><b>© 2023 Formify Inc. Toate drepturile la nivel mondial rezervate</b></p>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script>
+        var email = parent.document.URL.substring(parent.document.URL.indexOf('email=') + 6, parent.document.URL.length);
+      </script>
+
+  <title>Page Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+.generate-button {
+  background-color: #4CAF50; /* Green color, change as needed */
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.modal-content {
+    text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 80%;
+}
+
+.modal h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.modal label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.modal .submit-button, .modal .generate-button {
+  background-color: rgb(127, 201, 0);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .header h1 {
+  font-size: 40px;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #1c0053;
+}
+
+/* Style the navigation bar links */
+.navbar a, #title {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  align-items: center;
+      padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.navbar #title{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    
+    
+}
+
+/* Right-aligned link */
+.navbar a.left, #title {
+  float: left;
+  font-size: 35px;
+  margin-top: 0px;
+  cursor:default;
+}
+
+.navbar a.left:hover{
+    background-color: #1c0053;
+  color: rgb(255, 255, 255);
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #1c0053;
+  color: rgb(255, 123, 0);
+}
+
+.navbar a.register-button {
+      background-color: rgb(0, 81, 255); /* Change the color here */
+      color: rgb(255, 255, 255);
+      border-radius: 12px;
+      padding: 5px 20px;
+      margin-right: 10px;
+      text-align: center;
+
+      margin-top: 15px; 
+    }
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+    /* Main column */
+    .main {   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 100px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+    /* Center the button */
+    .button {
+
+background-color:  rgb(255, 255, 255); 
+border:2px solid rgb(127, 201, 0);
+color: rgb(127, 201, 0); 
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+font-size: 20px;
+margin: 100px 0px;
+transition-duration: 0.4s;
+cursor: pointer;
+border-radius: 12px;
+}
+
+    .button:hover {
+      background-color: rgb(127, 201, 0);
+      color: white;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      background: #ddd;
+      padding: 10px;
+      align-items: center;
+      padding-left: 150px;
+    }
+
+.footer-left {
+      flex: 10%;
+    }
+
+    
+
+/* Right column with text */
+.footer-right {
+    flex: 90%;
+    padding-left: 0px; /* Add some space between the columns */
+}
+
+    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 700px) {
+      .navbar a {
+        float: none;
+        width: 100%;
+      }
+    }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .navbar a {
+        float: none;
+        width: 100%;
+      }
+    }
+
+    .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: -40px; /* Adjust the margin as needed */
+}
+
+.column button {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.column p {
+
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.column p a{
+    color: blue;
+    cursor: pointer;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    var email = parent.document.URL.substring(parent.document.URL.indexOf('email=') + 6, parent.document.URL.length);
+  </script>
+</head>
+<body>
+
+  <div class="navbar">
+    
+    <a href="pagina_conectare.html">Deconectare</a>
+    <a onclick="location.href='recenzii.html?email='+email">Recenzii</a>
+    <a class="left"><img src="dynamic_forms_generator_logo2.png" width=40></a>
+    <p href="#" id="title" class="left"><b>Formify</b></p>
+  </div>
+
+<br><br><br>
+
+  <div class="row">
+    <div class="column" style="background-color:#ffffff;">
+      <img src="1.png" width="70%">
+    </div>
+    <div class="column" style="background-color:#ffffff;">
+        <h1>Șabloane de formulare dinamice gratuite</h1>
+        <p style="color:rgb(87, 86, 86)">Explorează șabloane gata făcute sau <a onclick="location.href=`creare_formular.html?email=${email}`">creează un formular de la zero</a>.</p>
+    </div>
+    <div class="column" style="background-color:#ffffff;">
+        <div class="column2">
+        <img src="2.png" width="70%">
+    </div>
+    </div>
+  </div>
+
+  <script>
+    var formCode;
+    var formStyle = `<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width:30%;
+  text-align:center
+};`
+
+    function showFormPreview(formType) {
+      // Get the form preview content based on the formType (you may need to replace this with actual form content)
+      var formPreviewContent = getFormPreviewContent(formType);
+  
+      // Create a modal element
+      var modal = document.createElement('div');
+      modal.className = 'modal';
+      
+      // Set the modal content (form preview)
+      modal.innerHTML = formPreviewContent;
+  
+      // Append the modal to the body
+      document.body.appendChild(modal);
+  
+      // Close the modal when clicked outside the modal content
+      window.onclick = function (event) {
+        if(event.target == modal){
+            modal.remove();
+        }
+      };
+    }
+  
+    // Replace this function with actual form content based on formType
+    function getFormPreviewContent(formType) {
+  var formTitle, formDescription, formFields;
+
+  if (formType === 'registration') {
+    formTitle = 'Formular de inregistrare';
+    formDescription = 'Un formular de înregistrare pentru client nou este un formular de business pe care clienții noi îl completează pentru a li se colecta informațiile.';
+    formFields = `
+      <label for="nume">Nume:</label>
+      <input type="text" id="nume" name="nume">
+      <br>
+      <label for="prenume">Prenume:</label>
+      <input type="text" id="prenume" name="prenume">
+      <br>
+      <label for="telefon">Numar de telefon:</label>
+      <input type="text" id="telefon" name="telefon">
+      <br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+      <br>
+    `;
+  } else if (formType === 'feedback') {
+    formTitle = 'Formular de feedback';
+    formDescription = 'Dorești să primești feedback de la clienții tăi? Poți folosi acest șablon de formular de feedback. Acest format de formular de feedback este simplu și ușor de folosit.';
+    formFields = `
+      <label for="opinie">Opinie:</label><br>
+      <textarea id="text" name="opinie" rows="4"></textarea>
+      <br>
+      <label for="rating">Rating:</label>
+      <input type="text" id="text" name="rating" min="1" max="5">
+      <br>
+    `;
+  }else if (formType === 'reservation') {
+        formTitle = 'Formular de rezervare a unei mese';
+        formDescription = 'Rezervă o masă folosind acest formular simplu și rapid.';
+        formFields = `
+            <label for="nume">Nume:</label>
+            <input type="nume" id="text" name="nume">
+            <br><br>
+            <label for="numar_persoane">Numar persoane:</label>
+            <input type="number" id="numar_persoane" name="numar_persoane" min="1">
+            <br><br>
+            <label for="data">Data rezervarii:</label>
+            <input type="date" id="data" name="data">
+            <br><br>
+            <label for="ora">Ora rezervarii:</label>
+            <input type="time" id="ora" name="ora">
+            <br><br>
+        `;}
+  formCode=`
+</style><div>
+      <h2>${formTitle}</h2>
+
+      <form action="#" method="post">
+        ${formFields}
+        <input type="submit" value="Trimite" class="submit-button"></div>`
+  return `<div class="modal-content">` + formCode + `<button class="generate-button" onclick="php_req()">Generează</button> </form> </div>`;
+}
+
+function php_req(){
+      $(document).ready(function(){
+        var request;
+        event.preventDefault();
+        if (request){
+            request.abort;
+        }
+        var form = $(this);
+        
+        var inputs = form.find("input, button");
+        
+        var serializedData = `email=${email}&formCode=${formStyle + formCode + "</form>"}`;
+
+        inputs.prop("disabled", true);
+        
+        console.log("a");
+        $.ajax({
+            url:"./creare_formular.php",
+            type: "post",
+            data: serializedData
+        }).then((resp) => {
+          console.log(resp);
+          if (resp == "Message has been sent"){
+              alert("Codul formularului a fost trimis pe mail. :D");
+              window.location.href=`pagina_sabloane.html?email=${email}`;
+          }
+        });
+      });
+    }
+  </script>
+  
+
+<br><br><br>
+
+  <div class="row">
+    <div class="column" style="background-color:#ffffff;">
+      <h2>Formular de înregistrare pentru client nou</h2>
+      <p>Un formular de înregistrare pentru client nou este un formular de business pe care clienții noi îl completează pentru a li se colecta informațiile.</p>
+      <button class="button button1" onclick="showFormPreview('registration')">Folosește șablon</button>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column" style="background-color:#ffffff;">
+      <h2>Formular de feedback</h2>
+      <p>Dorești să primești feedback de la clienții tăi? Poți folosi acest șablon de formular de feedback. Acest format de formular de feedback este simplu și ușor de folosit.</p>
+      <button class="button button1" onclick="showFormPreview('feedback')">Folosește șablon</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column" style="background-color:#ffffff;">
+      <h2>Formular de rezervare a unei mese</h2>
+      <p>Acest simplu formular de rezervare a unei mese într-un restaurant le permite clienților răi să facă rezervări online la restaurantul,pubul sau barul tău.</p>
+      <button class="button button1" onclick="showFormPreview('reservation')">Folosește șablon</button>
+    </div>
+  </div>
+  
+  <div class="main">
+    
+</div>
+
+<div class="footer">
+    <div class="footer-left">
+      <img src="dynamic_forms_generator_logo2.png" width=70>
+    </div>
+    <div class="footer-right">
+      <p style="color:rgb(65, 65, 132)"><b>📌 România, județul Timiș, municipiul Timișoara, strada Bobâlna nr. 23, 300331</b></p>
+      <p style="color:rgb(65, 65, 132)"><b>© 2023 Formify Inc. Toate drepturile la nivel mondial rezervate</b></p>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #1c0053;
+}
+
+/* Style the navigation bar links */
+.navbar a, #title {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  align-items: center;
+      padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.navbar #title{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+/* Right-aligned link */
+.navbar a.left, #title {
+  float: left;
+  font-size: 35px;
+  margin-top: 0px;
+  cursor:default;
+}
+
+.navbar a.left:hover{
+    background-color: #1c0053;
+  color: rgb(255, 255, 255);
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #1c0053;
+  color: rgb(255, 123, 0);
+}
+
+.navbar a.register-button {
+      background-color: rgb(0, 81, 255); /* Change the color here */
+      color: rgb(255, 255, 255);
+      border-radius: 12px;
+      padding: 5px 20px;
+      margin-right: 10px;
+      text-align: center;
+
+      margin-top: 15px; 
+    }
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+
+/*
+
+.main {   
+  -ms-flex: 70%; 
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+  padding-left: 300px;
+  padding-right: 300px;
+  align-items: center;
+}*/
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+.main {   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 100px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+
+
+/* Center the button */
+.button {
+
+  background-color:  rgb(255, 123, 0); 
+  border:rgb(255, 123, 0);
+  color: black; 
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 100px 0px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color:  rgb(231, 112, 1);
+  color: white;
+}
+
+/*.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}*/
+
+
+
+.button1 {
+  background-color:  rgb(255, 123, 0); 
+  color: rgb(255, 255, 255); 
+
+}
+/*
+.button1:hover {
+  background-color: #04AA6D;
+  color: white;
+}*/
+
+/* Footer */
+/*.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}*/
+
+.footer {
+      display: flex;
+      background: #ddd;
+      padding: 10px;
+      align-items: center;
+      padding-left: 150px;
+    }
+
+.footer-left {
+      flex: 10%;
+    }
+
+    
+
+/* Right column with text */
+.footer-right {
+    flex: 90%;
+    padding-left: 0px; /* Add some space between the columns */
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Add this line to center-align the content */
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px auto; /* Center the form horizontally */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Adjust the width as needed */
+}
+
+.registration-form label,
+.registration-form input,
+.registration-form button {
+  margin-bottom: 200px; /* Adjust the value to add more space */
+}
+
+    .registration-form label {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    
+
+    .registration-form button {
+      background-color: #1c0053;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px; /* Add some space between the fields and the button */
+    }
+
+    .registration-form input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .registration-form button:hover {
+      background-color: #1a003e;
+    }
+
+    #message {
+      display: none;
+      background: #f1f1f1;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    #message p {
+      padding: 10px 35px;
+      font-size: 18px;
+    }
+
+    .valid {
+      color: green;
+    }
+
+    .valid:before {
+      position: relative;
+      left: -35px;
+      content: "DA";
+    }
+
+    .invalid {
+      color: red;
+    }
+
+    .invalid:before {
+      position: relative;
+      left: -35px;
+      content: "NU";
+    }
+
+    #login-link {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 16px;
+      color: rgb(114, 114, 255);
+    }
+
+    .main-content {
+      background-color: rgb(182, 173, 230); /* Change the background color here */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+
+    
+  </style>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+  <div class="navbar">
+
+    <a href="pagina_conectare.html">Conectare</a>
+    <a class="left"><img src="dynamic_forms_generator_logo2.png" width="40"></a>
+    <p href="#" id="title" class="left"><b>Formify</b></p>
+  </div>
+
+  
+    <!-- Registration form -->
+    <div class="main-content">
+        <div class="registration-form">
+        <h2>Înregistrează-te acum</h2>
+        <p>Vă rugăm să completați acest formular pentru a crea un cont.</p>
+
+        <form action="" method="POST" onsubmit="return php_req()">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Introduceți adresa de email" required>
+
+            <label for="password">Parola:</label>
+            <input type="password" id="password" name="password" placeholder="Introduceți parola" required>
+            <div id="message">
+            <p id="letter" class="invalid">O literă mică</p>
+            <p id="capital" class="invalid">O literă mare</p>
+            <p id="number" class="invalid">Un număr</p>
+            <p id="length" class="invalid">Minim 8 caractere</p>
+            </div>
+
+            <button type="submit">Înregistrează-te</button>
+        </form>
+
+        <p id="login-link">Ai deja cont? <a href="pagina_conectare.html">Conectare</a>.</p>
+        </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <img src="dynamic_forms_generator_logo2.png" width="70">
+    </div>
+    <div class="footer-right">
+      <p style="color:rgb(65, 65, 132)"><b>📌 România, județul Timiș, municipiul Timișoara, strada Bobâlna nr. 23, 300331</b></p>
+      <p style="color:rgb(65, 65, 132)"><b>© 2023 Formify Inc. Toate drepturile la nivel mondial rezervate</b></p>
+    </div>
+  </div>
+
+  <script>
+    var myInput = document.getElementById("password");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+
+    myInput.onfocus = function () {
+      document.getElementById("message").style.display = "block";
+    };
+
+    myInput.onblur = function () {
+      document.getElementById("message").style.display = "none";
+    };
+
+    myInput.onkeyup = function () {
+      var lowerCaseLetters = /[a-z]/g;
+      if (myInput.value.match(lowerCaseLetters)) {
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+      } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+      }
+
+      var upperCaseLetters = /[A-Z]/g;
+      if (myInput.value.match(upperCaseLetters)) {
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+      } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+      }
+
+      var numbers = /[0-9]/g;
+      if (myInput.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+
+      if (myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    };
+
+    function validateForm() {
+      // Add your additional form validation logic here
+      return true; // Return false if form validation fails
+    }
+
+    function validateForm() {
+      // Add your additional form validation logic here
+      return true; // Return false if form validation fails
+    }
+
+    function php_req(){
+      $(document).ready(function(){
+      console.log("Request made");
+  var request;
+  event.preventDefault();
+  if (request){
+      request.abort;
+  }
+  var form = $(this);
+  
+  var inputs = form.find("input, button");
+  
+  var serializedData = $("form :input").serialize();
+
+  inputs.prop("disabled", true);
+
+  request = $.ajax({
+      url:"./inregistrare.php",
+      type: "post",
+      data: serializedData
+  });
+  request.done(function(resp){
+      if (resp == "exists"){
+          alert("Exista deja un utilizator cu accest email!");
+      }
+      else if(resp == "eroare"){
+          alert("Email-ul nu a fost gasit");
+      }
+      else{
+          var cod = prompt("Introduceti codul primit pe mail");
+          while(cod != resp && cod != null){
+              cod = prompt("Cod gresit! Reincearca");
+          }
+
+          if(cod == resp){
+              inregistrare(serializedData);
+          }
+      }
+  })
+  request.always(function(resp){
+      inputs.prop("disabled", false);
+      console.log(resp);
+  });
+});
+}
+
+function inregistrare(serializedData){
+  $(document).ready(function(){
+      console.log("Request made");
+  var request;
+
+  if (request){
+      request.abort;
+  }
+  var form = $(this);
+  
+  var inputs = form.find("input, button");
+
+  inputs.prop("disabled", true);
+
+  request = $.ajax({
+      url:"./inregistrare1.php",
+      type: "post",
+      data: serializedData
+  });
+  request.done(function(resp){
+      if (resp == "ok"){
+
+        alert("Utilizator inregistrat cu succes!");
+        window.location.replace('./pagina_conectare.html');
+      }
+    });
+  request.always(function(resp){
+      inputs.prop("disabled", false);
+      console.log(resp);
+  });
+});
+}
+
+  </script>
+</body>
+</html>

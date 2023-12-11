@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #1c0053;
+}
+
+/* Style the navigation bar links */
+.navbar a, #title {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  align-items: center;
+      padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.navbar #title{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+/* Right-aligned link */
+.navbar a.left, #title {
+  float: left;
+  font-size: 35px;
+  margin-top: 0px;
+  cursor:default;
+}
+
+.navbar a.left:hover{
+    background-color: #1c0053;
+  color: rgb(255, 255, 255);
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #1c0053;
+  color: rgb(255, 123, 0);
+}
+
+.navbar a.register-button {
+      background-color: rgb(0, 81, 255); /* Change the color here */
+      color: rgb(255, 255, 255);
+      border-radius: 12px;
+      padding: 5px 20px;
+      margin-right: 10px;
+      text-align: center;
+
+      margin-top: 15px; 
+    }
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+
+/*
+
+.main {   
+  -ms-flex: 70%; 
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+  padding-left: 300px;
+  padding-right: 300px;
+  align-items: center;
+}*/
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+.main {   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 100px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+
+
+/* Center the button */
+.button {
+
+  background-color:  rgb(255, 123, 0); 
+  border:rgb(255, 123, 0);
+  color: black; 
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 100px 0px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color:  rgb(231, 112, 1);
+  color: white;
+}
+
+/*.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}*/
+
+
+
+.button1 {
+  background-color:  rgb(255, 123, 0); 
+  color: rgb(255, 255, 255); 
+
+}
+/*
+.button1:hover {
+  background-color: #04AA6D;
+  color: white;
+}*/
+
+/* Footer */
+/*.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}*/
+
+.footer {
+      display: flex;
+      background: #ddd;
+      padding: 10px;
+      align-items: center;
+      padding-left: 150px;
+    }
+
+.footer-left {
+      flex: 10%;
+    }
+
+    
+
+/* Right column with text */
+.footer-right {
+    flex: 90%;
+    padding-left: 0px; /* Add some space between the columns */
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: -40px; /* Adjust the margin as needed */
+}
+
+.column button {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.column p {
+
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div class="navbar">
+    <a href="pagina_inregistrare.html" class="register-button">Înregistrează-te gratuit</a>
+  <a href="pagina_conectare.html">Conectare</a>
+  <a class="left"><img src="dynamic_forms_generator_logo2.png" width=40></a>
+  <p href="#" id = "title" class="left"><b>Formify</b></p>
+</div>
+
+
+  <div class="main">
+    <h3 style="color:rgb(255, 123, 0)">CEL MAI UȘOR GENERATOR ONLINE DE FORMULARE</h3>
+    <h1 style="text-align:center; font-size: 40px">Formularele potrivite fac treaba.</h1>
+    <h3 style="text-align:center;color:rgb(87, 86, 86)">Noi credem că formularul corespunzător face toată diferența. Treci de la muncă la câteva click-uri cu formulare care își scriu singure codul.</h3>
+    
+    
+  </div>
+</div>
+
+<div class="row">
+    <div class="column" style="background-color:#ffffff;">
+      <img src="poza1.png" width="70%">
+    </div>
+    <div class="column" style="background-color:#ffffff;">
+        <button class="button button1" onclick="window.location.href = 'pagina_inregistrare.html'"><a style="text-decoration: none; color:white">Înregistrează-te cu email</a></button>
+        <p style="text-align:center;color:rgb(87, 86, 86); margin-top: 10px;"><a href="pagina_inregistrare.html" style="text-decoration: none; color:rgb(65, 65, 132);"><b>E GRATIS!</b></a></p>
+    </div>
+    <div class="column" style="background-color:#ffffff;">
+        <div class="column2">
+        <img src="poza2.png" width="70%">
+    </div>
+    </div>
+  </div>
+
+<div class="footer">
+    <div class="footer-left">
+      <img src="dynamic_forms_generator_logo2.png" width=70>
+    </div>
+    <div class="footer-right">
+      <p style="color:rgb(65, 65, 132)"><b>📌 România, județul Timiș, municipiul Timișoara, strada Bobâlna nr. 23, 300331</b></p>
+      <p style="color:rgb(65, 65, 132)"><b>© 2023 Formify Inc. Toate drepturile la nivel mondial rezervate</b></p>
+    </div>
+  </div>
+
+</body>
+</html>
